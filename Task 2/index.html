@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodigy Stopwatch - Task 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <span>Prodigy</span>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="#" class="active"><i class="fas fa-stopwatch"></i> Stopwatch</a></li>
+                <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="stopwatch-container">
+            <div class="stopwatch">
+                <div class="time-display">
+                    <span id="minutes">00</span>
+                    <span class="colon">:</span>
+                    <span id="seconds">00</span>
+                    <span class="colon">:</span>
+                    <span id="milliseconds">00</span>
+                </div>
+                
+                <div class="controls">
+                    <button id="start-btn" class="control-btn">
+                        <i class="fas fa-play"></i>
+                        <span>Start</span>
+                    </button>
+                    <button id="lap-btn" class="control-btn" disabled>
+                        <i class="fas fa-flag"></i>
+                        <span>Lap</span>
+                    </button>
+                    <button id="reset-btn" class="control-btn" disabled>
+                        <i class="fas fa-redo-alt"></i>
+                        <span>Reset</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="laps-container">
+                <h3>Lap Times</h3>
+                <div class="laps-header">
+                    <span>Lap</span>
+                    <span>Time</span>
+                    <span>Total</span>
+                </div>
+                <div id="laps-list">
+                    <!-- Lap times will be displayed here -->
+                    <div class="empty-laps">
+                        <i class="fas fa-stopwatch"></i>
+                        <p>Lap times will appear here</p>
+                    </div>
+                </div>
+                <button id="clear-laps-btn" class="control-btn secondary" disabled>
+                    <i class="fas fa-trash"></i>
+                    <span>Clear Laps</span>
+                </button>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>Made with <i class="fas fa-heart"></i> for Prodigy Internship</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
