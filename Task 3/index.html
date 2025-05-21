@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodigy Tic-Tac-Toe - Task 3</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Critical styles to ensure visibility */
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+            width: 100%;
+            max-width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .cell {
+            background-color: #f0f4ff;
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <span>Prodigy</span>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="#" class="active"><i class="fas fa-gamepad"></i> Tic-Tac-Toe</a></li>
+                <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="game-container">
+            <div class="game-header">
+                <h1>Tic-Tac-Toe</h1>
+                <p id="status-message">Player X's turn</p>
+            </div>
+            
+            <div class="game-board">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+            
+            <div class="game-controls">
+                <div class="score-board">
+                    <div class="score player-x">
+                        <span class="player-icon">X</span>
+                        <span id="score-x">0</span>
+                    </div>
+                    <div class="score player-o">
+                        <span class="player-icon">O</span>
+                        <span id="score-o">0</span>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button id="reset-btn" class="control-btn"><i class="fas fa-redo-alt"></i> Reset Game</button>
+                    <button id="ai-toggle-btn" class="control-btn secondary"><i class="fas fa-robot"></i> <span>Play vs AI</span></button>
+                </div>
+            </div>
+            
+            <div class="difficulty-selector" style="display: none;">
+                <p>Select AI Difficulty:</p>
+                <div class="difficulty-options">
+                    <button class="difficulty-btn" data-difficulty="easy">Easy</button>
+                    <button class="difficulty-btn active" data-difficulty="medium">Medium</button>
+                    <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <div id="win-modal" class="modal">
+        <div class="modal-content">
+            <div class="confetti"></div>
+            <h2 id="winner-text">Player X Wins!</h2>
+            <div id="win-animation"></div>
+            <button id="play-again-btn" class="control-btn"><i class="fas fa-play"></i> Play Again</button>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Made with <i class="fas fa-heart"></i> for Prodigy Internship</p>
+    </footer>
+
+    <!-- Console debugging output for development -->
+    <div id="debug-output" style="display: none;"></div>
+
+    <script>
+        // Inline script to check if the page is loading properly
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM fully loaded');
+            
+            // Check if the game board is visible
+            const gameBoard = document.querySelector('.game-board');
+            const cells = document.querySelectorAll('.cell');
+            
+            console.log('Game board found:', gameBoard ? 'Yes' : 'No');
+            console.log('Cells found:', cells.length);
+            
+            // Basic cell click functionality in case the main script fails
+            cells.forEach((cell, index) => {
+                cell.addEventListener('click', function() {
+                    if (!cell.textContent) {
+                        cell.textContent = 'X';
+                        cell.style.color = '#6a98ff';
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html> 
