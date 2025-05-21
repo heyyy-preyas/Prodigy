@@ -1,6 +1,6 @@
 // Weather App - Task 5
 // API Configuration
-const API_KEY = 'be25024f2f17c8dd32cea770b739ce49'; // Replace with your actual OpenWeatherMap API key
+const API_KEY = 'be25024f2f17c8dd32cea770b739ce49'; 
 const WEATHER_API_URL = 'https://api.openweathermap.org/data/2.5/weather';
 const FORECAST_API_URL = 'https://api.openweathermap.org/data/2.5/forecast';
 const AIR_QUALITY_API_URL = 'https://api.openweathermap.org/data/2.5/air_pollution';
@@ -284,8 +284,7 @@ function updateBackgroundBasedOnWeather(weatherData) {
         document.body.classList.add('cold');
     }
     
-    // No need to change the background image since we're using a fixed background.jpg
-    // Instead, we'll apply a weather-appropriate overlay via CSS classes
+   
 }
 
 // Update 5-day forecast
